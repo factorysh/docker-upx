@@ -15,6 +15,9 @@ image:
 push:
 	docker push bearstech/upx
 
+remove_image:
+	docker rmi bearstech/upx
+
 tests/bin/goss:
 	mkdir -p tests/bin
 	curl -o tests/bin/goss -L https://github.com/aelsabbahy/goss/releases/download/v$(GOSS_VERSION)/goss-linux-amd64
