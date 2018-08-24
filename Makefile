@@ -1,5 +1,3 @@
-.PHONY: tests
-
 GOSS_VERSION := 0.3.5
 
 all: pull build
@@ -18,15 +16,15 @@ push:
 remove_image:
 	docker rmi bearstech/upx
 
-tests/bin/goss:
-	mkdir -p tests/bin
-	curl -o tests/bin/goss -L https://github.com/aelsabbahy/goss/releases/download/v$(GOSS_VERSION)/goss-linux-amd64
-	chmod +x tests/bin/goss
+tests_upx/bin/goss:
+	mkdir -p tests_upx/bin
+	curl -o tests_upx/bin/goss -L https://github.com/aelsabbahy/goss/releases/download/v$(GOSS_VERSION)/goss-linux-amd64
+	chmod +x tests_upx/bin/goss
 
-test: tests/bin/goss
+test: tests_upx/bin/goss
 	docker run --rm -t \
-		-v `pwd`/tests/bin/goss:/usr/local/bin/goss \
-		-v `pwd`/tests:/goss \
+		-v `pwd`/tests_upx/bin/goss:/usr/local/bin/goss \
+		-v `pwd`/tests_upx:/goss \
 		-w /goss \
 		bearstech/upx \
 		goss -g upx.yaml validate --max-concurrent 4 --format documentation
