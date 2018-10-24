@@ -29,4 +29,6 @@ test: tests_upx/bin/goss
 		bearstech/upx \
 		goss -g upx.yaml validate --max-concurrent 4 --format documentation
 
+down:
+
 tests: test
