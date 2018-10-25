@@ -5,8 +5,6 @@ RUN set -eux \
     &&  apt-get install  -y --no-install-recommends \
                   upx-ucl \
     &&  apt-get clean \
-    &&  rm -rf /var/lib/apt/lists/* \
-    &&  useradd --home-dir /upx --create-home --shell /bin/bash upx
+    &&  rm -rf /var/lib/apt/lists/*
 
 WORKDIR /upx
-USER upx
