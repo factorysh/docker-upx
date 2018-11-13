@@ -1,4 +1,4 @@
-GOSS_VERSION := 0.3.5
+GOSS_VERSION := 0.3.6
 
 all: pull build
 
