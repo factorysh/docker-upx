@@ -1,14 +1,16 @@
 GOSS_VERSION := 0.3.5
+GIT_VERSION := $(shell git rev-parse HEAD)
 
 all: pull build
 
 pull:
 	docker pull bearstech/debian:stretch
 
-build: image
-
-image:
-	docker build -t bearstech/upx .
+build:
+	docker build \
+		--build-arg GIT_VERSION=${GIT_VERSION} \
+		-t bearstech/upx \
+		.
 
 push:
 	docker push bearstech/upx

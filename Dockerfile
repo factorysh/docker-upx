@@ -10,3 +10,7 @@ RUN set -eux \
 
 WORKDIR /upx
 USER upx
+
+ARG GIT_VERSION
+LABEL com.bearstech.source.upx=https://github.com/factorysh/docker-upx/commit/${GIT_VERSION}
+
