@@ -14,3 +14,6 @@ USER upx
 ARG GIT_VERSION
 LABEL com.bearstech.source.upx=https://github.com/factorysh/docker-upx/commit/${GIT_VERSION}
 
+ARG GIT_DATE
+LABEL com.bearstech.date.upx=${GIT_DATE}
+
