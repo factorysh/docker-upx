@@ -1,4 +1,4 @@
-FROM bearstech/debian:stretch
+FROM bearstech/debian:buster
 
 RUN set -eux \
     &&  apt-get update \
