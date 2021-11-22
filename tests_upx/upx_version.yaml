@@ -4,4 +4,4 @@ command:
     upx --version:
         exit-status: 0
         stdout:
-            - /.*3\.95.*/
+            - /.*3\.96.*/

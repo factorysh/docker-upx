@@ -1,4 +1,4 @@
-FROM bearstech/debian:buster
+FROM bearstech/debian:bullseye
 
 RUN set -eux \
     &&  export http_proxy=${HTTP_PROXY} \
